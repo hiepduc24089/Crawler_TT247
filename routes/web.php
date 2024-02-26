@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ScheduleDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    $crawler = Goutte::request('GET', 'https://lichcupdien.org/');
+    $crawler->filter('h3.m1-large')->each(function ($node) {
+        echo $node->text() . "</br>";
+    });
+
 });
+Route::get('/{slug}', [ScheduleDetailController::class, 'show'])->name('schedule_detail.show');
