@@ -14,11 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    $crawler = Goutte::request('GET', 'https://lichcupdien.org/');
-    $crawler->filter('h3.m1-large')->each(function ($node) {
-        echo $node->text() . "</br>";
-    });
-
-});
+Route::get('/', [ScheduleDetailController::class, 'index'])->name('schedule_detail.index');
 Route::get('/{slug}', [ScheduleDetailController::class, 'show'])->name('schedule_detail.show');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Province;
 use App\Models\ScheduleDetail;
 use DateTime;
 use Goutte\Client;
@@ -16,78 +17,34 @@ class ScheduleDetailController extends Controller
      */
     public function index()
     {
-        //
+        $provincesSouth = Province::where('region_id', Province::SOUTH)->get();
+        $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
+        $provincesNorth = Province::where('region_id', Province::NORTH)->get();
+
+        return view('index', compact('provincesSouth', 'provincesCentral', 'provincesNorth'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($slug)
     {
-        $data = ScheduleDetail::where('slug', $slug)->get();
+        $province = Province::where('slug', $slug)->first();
 
-        if ($data->isEmpty()) {
-            abort(404, 'Schedule details not found.');
+        if (!$province) {
+            abort(404, 'Province not found.');
         }
 
-        return view('show', compact('data'));
+        $scheduleDetailsGroupedByDate = $province->scheduleDetails->groupBy(function ($item) {
+            return $item->date_cut->format('Y-m-d');
+        });
+
+        if ($scheduleDetailsGroupedByDate->isEmpty()) {
+            abort(404, 'Schedule details not found for this province.');
+        }
+
+        $provincesSouth = Province::where('region_id', Province::SOUTH)->get();
+        $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
+        $provincesNorth = Province::where('region_id', Province::NORTH)->get();
+
+        return view('show', compact('scheduleDetailsGroupedByDate', 'province', 'provincesSouth', 'provincesCentral', 'provincesNorth'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

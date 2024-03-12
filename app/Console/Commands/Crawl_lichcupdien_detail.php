@@ -104,18 +104,12 @@ class Crawl_lichcupdien_detail extends Command
                     break;
             }
         });
-        //Slug
-        $parsedUrl = parse_url($url);
-        $path = trim($parsedUrl['path'], '/');
-        $slugParts = explode('/', $path);
-        $slug = end($slugParts);
 
         //Save to database
         for ($i = 0; $i < count($names); $i++) {
             try {
                 $scheduleDetail = ScheduleDetail::updateOrCreate(
                     [
-                        'slug' => $slug,
                         'name' => $names[$i],
                         'province_id' => $provinceId,
                         'date_cut' => $dates[$i],

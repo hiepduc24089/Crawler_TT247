@@ -22,7 +22,6 @@ class CreateScheduleDetailsTable extends Migration
             $table->text('area')->nullable();
             $table->text('reason')->nullable();
             $table->string('status')->nullable();
-            $table->string('slug')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

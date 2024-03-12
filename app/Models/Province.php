@@ -11,12 +11,23 @@ class Province extends Model
     use HasFactory, SoftDeletes;
 
     public $table = 'provinces';
-
+    public const NORTH = 3;
+    public const CENTRAL = 2;
+    public const SOUTH = 1;
     protected $fillable = [
         'name',
+        'slug',
+        'region_id',
     ];
 
     protected $casts = [
         'name' => 'string',
+        'slug' => 'string',
+        'region_id' => 'integer',
     ];
+
+    public function scheduleDetails()
+    {
+        return $this->hasMany(ScheduleDetail::class, 'province_id', 'id');
+    }
 }

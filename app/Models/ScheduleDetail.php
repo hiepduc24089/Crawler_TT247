@@ -20,7 +20,6 @@ class ScheduleDetail extends Model
         'area',
         'reason',
         'status',
-        'slug',
     ];
 
     protected $casts = [
@@ -31,6 +30,11 @@ class ScheduleDetail extends Model
         'area' => 'string',
         'reason' => 'string',
         'status' => 'string',
-        'slug' => 'string',
     ];
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id', 'id');
+    }
+
 }

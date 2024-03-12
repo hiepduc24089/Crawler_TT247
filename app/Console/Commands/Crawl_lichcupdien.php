@@ -40,13 +40,35 @@ class Crawl_lichcupdien extends Command
     public function handle()
     {
         try {
-            $crawler = Goutte::request('GET', 'https://lichcupdien.org/');
+            $mainPageUrl = 'https://lichcupdien.org/';
+            $crawler = Goutte::request('GET', $mainPageUrl);
+
             $names = $crawler->filter('h3.m1-large.m1-home')->each(function ($node) {
                 return trim($node->text());
             });
 
-            foreach ($names as $name) {
-                $data = ['name' => $name];
+            $urls = $crawler->filter('ul.w3-ul.w3-hoverable a.textnonedecor')->each(function ($node) use ($mainPageUrl) {
+                return $mainPageUrl . ltrim($node->attr('href'), '/');
+            });
+
+            foreach ($names as $index => $name) {
+                if (isset($urls[$index])) {
+                    $parsedUrl = parse_url($urls[$index]);
+                    $path = trim($parsedUrl['path'], '/');
+                    $slugParts = explode('/', $path);
+                    $slug = end($slugParts);
+
+                    $data = [
+                        'name' => $name,
+                        'slug' => $slug,
+                    ];
+                } else {
+                    $data = [
+                        'name' => $name,
+                        'slug' => null,
+                    ];
+                }
+
                 $province = Province::create($data);
                 if ($province) {
                     $this->info("Successfully saved to database: " . $name);
@@ -58,5 +80,4 @@ class Crawl_lichcupdien extends Command
             $this->error("An error occurred: " . $e->getMessage());
         }
     }
-
 }
