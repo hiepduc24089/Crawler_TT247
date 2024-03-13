@@ -15,4 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ScheduleDetailController::class, 'index'])->name('schedule_detail.index');
-Route::get('/{slug}', [ScheduleDetailController::class, 'show'])->name('schedule_detail.show');
+
+Route::get('/lich-cup-dien-{slug}', [ScheduleDetailController::class, 'show'])
+    ->name('schedule_detail.show')
+    ->where('slug', '[a-z-]+');
+
+Route::get('/{slug_area}', [ScheduleDetailController::class, 'showArea'])
+    ->name('schedule_detail.show_area')
+    ->where('slug_area', 'dien-luc-.+');
+
+Route::get('/tinh/{slug_district}', [ScheduleDetailController::class, 'showDistrict'])
+    ->name('schedule_detail.show_district');

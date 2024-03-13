@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateProvincesTable extends Migration
+class UpdateProvincesSecondTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class UpdateProvincesTable extends Migration
     public function up()
     {
         Schema::table('provinces', function (Blueprint $table){
-           $table->unsignedBigInteger('region_id')->nullable()->after('name');
+            $table->string('slug_area')->nullable()->after('slug');
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateProvincesTable extends Migration
     public function down()
     {
         Schema::table('provinces', function (Blueprint $table) {
-            $table->dropColumn(['region_id']);
+            $table->dropColumn(['slug_area']);
         });
     }
 }

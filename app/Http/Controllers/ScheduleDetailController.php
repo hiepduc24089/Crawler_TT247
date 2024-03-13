@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Province;
-use App\Models\ScheduleDetail;
-use DateTime;
-use Goutte\Client;
-use Illuminate\Http\Request;
+use App\Models\ProvincesDistrict;
 
 class ScheduleDetailController extends Controller
 {
@@ -26,7 +23,7 @@ class ScheduleDetailController extends Controller
 
     public function show($slug)
     {
-        $province = Province::where('slug', $slug)->first();
+        $province = Province::where('last_slug', $slug)->first();
 
         if (!$province) {
             abort(404, 'Province not found.');
@@ -44,7 +41,37 @@ class ScheduleDetailController extends Controller
         $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
         $provincesNorth = Province::where('region_id', Province::NORTH)->get();
 
-        return view('show', compact('scheduleDetailsGroupedByDate', 'province', 'provincesSouth', 'provincesCentral', 'provincesNorth'));
+        $provicesDistricts = ProvincesDistrict::where('province_id', $province->id)->get();
+
+        return view('show', compact('scheduleDetailsGroupedByDate', 'province',
+            'provincesSouth', 'provincesCentral', 'provincesNorth', 'provicesDistricts'));
     }
 
+    public function showArea($slugArea)
+    {
+        $province = Province::where('slug_area', $slugArea)->first();
+
+        $provicesDistricts = ProvincesDistrict::where('province_id', $province->id)->get();
+
+        $provincesSouth = Province::where('region_id', Province::SOUTH)->get();
+        $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
+        $provincesNorth = Province::where('region_id', Province::NORTH)->get();
+
+        return view('show_area', compact('province', 'provicesDistricts',
+            'provincesSouth', 'provincesCentral', 'provincesNorth'));
+    }
+
+    public function showDistrict($slugDistrict)
+    {
+        $provinceDistricts = ProvincesDistrict::where('slug_district', $slugDistrict)->first();
+
+        $districts = ProvincesDistrict::where('province_id', $provinceDistricts->province_id)->get();
+
+        $provincesSouth = Province::where('region_id', Province::SOUTH)->get();
+        $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
+        $provincesNorth = Province::where('region_id', Province::NORTH)->get();
+
+        return view('show_district', compact('provinceDistricts', 'districts',
+            'provincesSouth', 'provincesCentral', 'provincesNorth'));
+    }
 }
