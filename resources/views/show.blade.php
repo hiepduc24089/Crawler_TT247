@@ -90,71 +90,77 @@
                 </div>
                 <div class="w3-container">
                     <img src="/lib/img/{{$province->slug}}.jpg" alt="Lịch cúp điện mới nhất hôm nay" style="width:100%; margin-bottom: 5px;">
-                    <h2 style="font-weight:bold">Thông báo lịch cúp điện {{$province->name}} có tác dụng gì?</h2>
-                    <p>Việc xảy ra tình trạng mất điện tại {{$province->name}} có thể có rất nhiều nguyên nhân. Các yếu tố có thể gây mất điện như: thiên tai, lũ lụt, bão, hoặc do đơn vị quản lý thực hiện thi công sửa chữa bảo trì đường dây lưới điện</p>
-                    <p>Dù cúp điện do bất kỳ nguyên nhân gì thì cũng sẽ gây ảnh hưởng rất lớn đến cuộc sống sinh hoạt và sản xuất của người dân thuộc khu vực mà Điện lực {{$province->name}} quản lý.</p>
-                    <p>Mất điện hay cúp điện được hiểu là điện áp đột ngột hạ xuống còn 0V. Khi đó, sinh hoạt bình thường của người dân bị ảnh hưởng. Khi nắng nóng, không thể sử dụng các thiết bị điện như quạt điện, hay điều hòa,... Nông dân không thể sử dụng máy bơm nước điện để tưới cây. Nhà máy, xí nghiệp không thể sản xuất như bình thường. Nên mọi người cần nắm rõ lịch cắt điện tại {{$province->name}} để chủ động được sản xuất và sinh hoạt hàng ngày.</p>
-                    <p>Để mọi người thuận tiện tra cứu lịch cúp điện {{$province->name}} và các khu vực, tỉnh thành xung quanh, trang web lichcupdien.org ra đời với mong muốn giúp mọi người có nơi tra cứu một cách nhanh chóng và chính xác lịch cắt điện {{$province->name}}. Khi nắm rõ được thông tin lịch mất điện {{$province->name}} sẽ giúp quý khán giả có tâm lý thoải mái, không bị bất ngờ khi sự cố cắt điện diễn ra.</p>
-                    <h2 style="font-weight:bold">Lịch cúp điện các quận huyện ở {{$province->name}}</h2>
-                    <div class="post_quan_huyen_wrapper">
-                        @foreach($provicesDistricts as $provicesDistrict)
-                            <div class="post_quan_huyen_item">
-                                <h5 style="margin: 3px 0; font-weight: 500; color: #012668;">
-                                    <a href="tinh/{{$provicesDistrict->slug_district}}" title = "Lịch cúp điện {{$provicesDistrict->district_name}} - {{$province->name}}" class="related-area-main">{{$provicesDistrict->district_name}}</a>
-                                </h5>
-                            </div>
-                        @endforeach
-                    </div>
-                    <h2 style="font-weight:bold">Lịch cúp điện {{$province->name}} những ngày tới</h2>
-                    @foreach($scheduleDetailsGroupedByDate as $date => $details)
-                        <h3 style="font-size:16px" class="tab-items-title-bold tab-items-red">
-                            Lịch cúp điện {{ $province->name }} ngày {{ \Carbon\Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y') }}
-                        </h3>
-                        <hr/>
-                        @foreach($details as $scheduleDetail)
-                            <div class="lcd_detail_wrapper">
-                                <div class="new_lcd_wrapper">
-                                    <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Điện lực:</span></div>
-                                    <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper item_txt_bold">{{$scheduleDetail->name}}</span></div>
+                    @if($scheduleDetailsGroupedByDate->isEmpty())
+                        <div class="no-dt">
+                            <span>Chưa có lịch cắt điện tại khu vực này.</span>
+                        </div>
+                    @else
+                        <h2 style="font-weight:bold">Thông báo lịch cúp điện {{$province->name}} có tác dụng gì?</h2>
+                        <p>Việc xảy ra tình trạng mất điện tại {{$province->name}} có thể có rất nhiều nguyên nhân. Các yếu tố có thể gây mất điện như: thiên tai, lũ lụt, bão, hoặc do đơn vị quản lý thực hiện thi công sửa chữa bảo trì đường dây lưới điện</p>
+                        <p>Dù cúp điện do bất kỳ nguyên nhân gì thì cũng sẽ gây ảnh hưởng rất lớn đến cuộc sống sinh hoạt và sản xuất của người dân thuộc khu vực mà Điện lực {{$province->name}} quản lý.</p>
+                        <p>Mất điện hay cúp điện được hiểu là điện áp đột ngột hạ xuống còn 0V. Khi đó, sinh hoạt bình thường của người dân bị ảnh hưởng. Khi nắng nóng, không thể sử dụng các thiết bị điện như quạt điện, hay điều hòa,... Nông dân không thể sử dụng máy bơm nước điện để tưới cây. Nhà máy, xí nghiệp không thể sản xuất như bình thường. Nên mọi người cần nắm rõ lịch cắt điện tại {{$province->name}} để chủ động được sản xuất và sinh hoạt hàng ngày.</p>
+                        <p>Để mọi người thuận tiện tra cứu lịch cúp điện {{$province->name}} và các khu vực, tỉnh thành xung quanh, trang web lichcupdien.org ra đời với mong muốn giúp mọi người có nơi tra cứu một cách nhanh chóng và chính xác lịch cắt điện {{$province->name}}. Khi nắm rõ được thông tin lịch mất điện {{$province->name}} sẽ giúp quý khán giả có tâm lý thoải mái, không bị bất ngờ khi sự cố cắt điện diễn ra.</p>
+                        <h2 style="font-weight:bold">Lịch cúp điện các quận huyện ở {{$province->name}}</h2>
+                        <div class="post_quan_huyen_wrapper">
+                            @foreach($provicesDistricts as $provicesDistrict)
+                                <div class="post_quan_huyen_item">
+                                    <h5 style="margin: 3px 0; font-weight: 500; color: #012668;">
+                                        <a href="tinh/{{$provicesDistrict->slug_district}}" title = "Lịch cúp điện {{$provicesDistrict->district_name}} - {{$province->name}}" class="related-area-main">{{$provicesDistrict->district_name}}</a>
+                                    </h5>
                                 </div>
+                            @endforeach
+                        </div>
+                        <h2 style="font-weight:bold">Lịch cúp điện {{$province->name}} những ngày tới</h2>
+                        @foreach($scheduleDetailsGroupedByDate as $date => $details)
+                            <h3 style="font-size:16px" class="tab-items-title-bold tab-items-red">
+                                Lịch cúp điện {{ $province->name }} ngày {{ \Carbon\Carbon::createFromFormat('Y-m-d', $date)->format('d/m/Y') }}
+                            </h3>
+                            <hr/>
+                            @foreach($details as $scheduleDetail)
+                                <div class="lcd_detail_wrapper">
+                                    <div class="new_lcd_wrapper">
+                                        <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Điện lực:</span></div>
+                                        <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper item_txt_bold">{{$scheduleDetail->name}}</span></div>
+                                    </div>
 
-                                <div class="new_lcd_wrapper">
-                                    <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Ngày:</span></div>
-                                    <div class="item_content_lcd_wrapper">
+                                    <div class="new_lcd_wrapper">
+                                        <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Ngày:</span></div>
+                                        <div class="item_content_lcd_wrapper">
                                         <span class="content_item_content_lcd_wrapper item_txt_bold item_txt_red">
                                             {{ $scheduleDetail->date_cut->translatedFormat('j F') }} năm {{ $scheduleDetail->date_cut->translatedFormat('Y') }}
                                         </span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                @php
-                                    $timeRange = $scheduleDetail->time_cut;
-                                    preg_match('/Từ (\d{2}:\d{2}) đến (\d{2}:\d{2})/', $timeRange, $matches);
-                                    $start_time = $matches[1] ?? '';
-                                    $end_time = $matches[2] ?? '';
-                                @endphp
-                                <div class="new_lcd_wrapper">
-                                    <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Thời gian:</span></div>
-                                    <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper">Từ <span class="item_lcd_time">{{ $start_time }}</span> đến <span class="item_lcd_time">{{ $end_time }}</span></span></div>
-                                </div>
+                                    @php
+                                        $timeRange = $scheduleDetail->time_cut;
+                                        preg_match('/Từ (\d{2}:\d{2}) đến (\d{2}:\d{2})/', $timeRange, $matches);
+                                        $start_time = $matches[1] ?? '';
+                                        $end_time = $matches[2] ?? '';
+                                    @endphp
+                                    <div class="new_lcd_wrapper">
+                                        <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Thời gian:</span></div>
+                                        <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper">Từ <span class="item_lcd_time">{{ $start_time }}</span> đến <span class="item_lcd_time">{{ $end_time }}</span></span></div>
+                                    </div>
 
-                                <div class="new_lcd_wrapper">
-                                    <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Khu vực:</span></div>
-                                    <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper">{{$scheduleDetail->area}}</span></div>
-                                </div>
+                                    <div class="new_lcd_wrapper">
+                                        <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Khu vực:</span></div>
+                                        <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper">{{$scheduleDetail->area}}</span></div>
+                                    </div>
 
-                                <div class="new_lcd_wrapper">
-                                    <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Lý do:</span></div>
-                                    <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper">{{$scheduleDetail->reason}}</span></div>
+                                    <div class="new_lcd_wrapper">
+                                        <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Lý do:</span></div>
+                                        <div class="item_content_lcd_wrapper"><span class="content_item_content_lcd_wrapper">{{$scheduleDetail->reason}}</span></div>
+                                    </div>
+                                    <div class="new_lcd_wrapper">
+                                        <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Trạng thái:</span></div>
+                                        <div class="item_content_lcd_wrapper"><i class="fa fa-check-circle" style="color: #00c590;"></i><span class="content_item_content_lcd_wrapper lcd_check_trang_thai">{{$scheduleDetail->status}}</span></div>
+                                    </div>
+                                    <hr/>
                                 </div>
-                                <div class="new_lcd_wrapper">
-                                    <div class="item_lcd_wrapper"><span class="title_item_lcd_wrapper">Trạng thái:</span></div>
-                                    <div class="item_content_lcd_wrapper"><i class="fa fa-check-circle" style="color: #00c590;"></i><span class="content_item_content_lcd_wrapper lcd_check_trang_thai">{{$scheduleDetail->status}}</span></div>
-                                </div>
-                                <hr/>
-                            </div>
+                            @endforeach
                         @endforeach
-                    @endforeach
+                    @endif
                     <p style="color: red"><i>Thông tin đang cập nhật</i></p>
                     <p>Nguồn: Thông tin từ các trang web chính thức của Tập đoàn Điện lực Việt Nam.</p>
                     <h2 style="font-weight:bold">Những cách tra cứu lịch cúp điện {{$province->name}} mới nhất</h2>

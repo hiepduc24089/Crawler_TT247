@@ -20,6 +20,7 @@ class ScheduleDetail extends Model
         'area',
         'reason',
         'status',
+        'district',
     ];
 
     protected $casts = [
@@ -30,6 +31,7 @@ class ScheduleDetail extends Model
         'area' => 'string',
         'reason' => 'string',
         'status' => 'string',
+        'district' => 'string',
     ];
 
     public function province()

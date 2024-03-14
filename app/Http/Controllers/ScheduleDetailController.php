@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Province;
 use App\Models\ProvincesDistrict;
+use App\Models\Reservoir;
+use App\Models\ReservoirRegion;
 
 class ScheduleDetailController extends Controller
 {
@@ -28,14 +30,11 @@ class ScheduleDetailController extends Controller
         if (!$province) {
             abort(404, 'Province not found.');
         }
+        $scheduleDetails = $province->scheduleDetails ?? collect([]);
 
-        $scheduleDetailsGroupedByDate = $province->scheduleDetails->groupBy(function ($item) {
+        $scheduleDetailsGroupedByDate = $scheduleDetails->groupBy(function ($item) {
             return $item->date_cut->format('Y-m-d');
         });
-
-        if ($scheduleDetailsGroupedByDate->isEmpty()) {
-            abort(404, 'Schedule details not found for this province.');
-        }
 
         $provincesSouth = Province::where('region_id', Province::SOUTH)->get();
         $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
@@ -72,6 +71,20 @@ class ScheduleDetailController extends Controller
         $provincesNorth = Province::where('region_id', Province::NORTH)->get();
 
         return view('show_district', compact('provinceDistricts', 'districts',
+            'provincesSouth', 'provincesCentral', 'provincesNorth'));
+    }
+
+    public function showReservoir()
+    {
+        $reservoirs = Reservoir::get();
+
+        $provincesSouth = Province::where('region_id', Province::SOUTH)->get();
+        $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
+        $provincesNorth = Province::where('region_id', Province::NORTH)->get();
+
+        $reservoirRegions = ReservoirRegion::get();
+
+        return view('show_reservoir', compact('reservoirs', 'reservoirRegions',
             'provincesSouth', 'provincesCentral', 'provincesNorth'));
     }
 }

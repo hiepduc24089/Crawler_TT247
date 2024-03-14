@@ -26,3 +26,6 @@ Route::get('/{slug_area}', [ScheduleDetailController::class, 'showArea'])
 
 Route::get('/tinh/{slug_district}', [ScheduleDetailController::class, 'showDistrict'])
     ->name('schedule_detail.show_district');
+
+Route::get('/muc-nuoc-cac-ho-thuy-dien', [ScheduleDetailController::class, 'showReservoir'])
+    ->name('schedule_detail.show_reservoir');

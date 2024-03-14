@@ -104,7 +104,7 @@ class Crawl_lichcupdien_detail extends Command
                     break;
             }
         });
-
+        $district = str_ireplace("Điện lực ", "", $names);
         //Save to database
         for ($i = 0; $i < count($names); $i++) {
             try {
@@ -117,6 +117,7 @@ class Crawl_lichcupdien_detail extends Command
                         'area' => $areas[$i],
                         'reason' => $reasons[$i],
                         'status' => $statuses[$i],
+                        'district' => $district[$i],
                     ]
                 );
 

@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('crawl:lichcupdien_detail')->daily();
+        $schedule->command('crawl:lichcupdien_reservoir')->daily();
     }
 
     /**
