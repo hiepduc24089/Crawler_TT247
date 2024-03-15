@@ -6,6 +6,8 @@ use App\Models\Province;
 use App\Models\ProvincesDistrict;
 use App\Models\Reservoir;
 use App\Models\ReservoirRegion;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ScheduleDetailController extends Controller
 {
@@ -62,16 +64,30 @@ class ScheduleDetailController extends Controller
 
     public function showDistrict($slugDistrict)
     {
-        $provinceDistricts = ProvincesDistrict::where('slug_district', $slugDistrict)->first();
-
+        $provinceDistricts = ProvincesDistrict::with('province')->where('slug_district', $slugDistrict)->firstOrFail();
         $districts = ProvincesDistrict::where('province_id', $provinceDistricts->province_id)->get();
 
         $provincesSouth = Province::where('region_id', Province::SOUTH)->get();
         $provincesCentral = Province::where('region_id', Province::CENTRAL)->get();
         $provincesNorth = Province::where('region_id', Province::NORTH)->get();
 
+        $scheduleDetails = DB::table('schedule_details')
+            ->join('province_companies', 'schedule_details.name', '=', 'province_companies.company_name')
+            ->join('provinces_districts', function ($join) use ($slugDistrict, $provinceDistricts) {
+                $join->on('province_companies.company_district', '=', 'provinces_districts.district_name')
+                    ->where('provinces_districts.slug_district', '=', $slugDistrict)
+                    ->where('schedule_details.province_id', '=', $provinceDistricts->province_id);
+            })
+            ->select('schedule_details.*')
+            ->get();
+
+        $scheduleDetailsGroupedByDate = $scheduleDetails->groupBy(function ($item) {
+            $date = Carbon::parse($item->date_cut);
+            return $date->format('Y-m-d');
+        });
+
         return view('show_district', compact('provinceDistricts', 'districts',
-            'provincesSouth', 'provincesCentral', 'provincesNorth'));
+            'provincesSouth', 'provincesCentral', 'provincesNorth', 'scheduleDetails', 'scheduleDetailsGroupedByDate'));
     }
 
     public function showReservoir()
