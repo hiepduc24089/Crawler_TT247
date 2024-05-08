@@ -2,15 +2,15 @@
 <html>
 <!-- Head -->
 <head>
-    <title>Mực nước các hồ thủy điện vừa cập nhật mới nhất - LichCupDien.org </title>
+    <title>Mực nước các hồ thủy điện vừa cập nhật mới nhất - codienroi.com </title>
     <meta charset="UTF-8">
     <meta name="description" content="Thông tin mực nước các hồ thủy điện, lịch xả nước các hồ thủy điện trên toàn quốc">
     <meta name="keywords" content="lich cup dien, mực nước các hồ thủy điện, mực nước xả các hồ thủy điện, mực nước các hồ thủy điện evn">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/lichcupdien-favicon.png">
+    <link rel="icon" type="image/x-icon" href="/codienroi-favicon.png">
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="{{ asset('w3-style.css') }}">
-    <link rel="canonical" href="https://lichcupdien.org/muc-nuoc-cac-ho-thuy-dien" />
+    <link rel="canonical" href="https://codienroi.com/muc-nuoc-cac-ho-thuy-dien" />
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('fa/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('fa/apple-icon-60x60.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('fa/apple-icon-72x72.png') }}">
@@ -63,8 +63,8 @@
 <body class="w3-light-grey">
 <div class="lcd-navbar">
     <div class="lcd-navbar-container">
-        <a class="logo" href="/" title="LichCupDien.org - Cập nhật lịch cúp điện toàn quốc nhanh nhất">
-            <img src="/img/logo-lichcupdien-header.png">
+        <a class="logo" href="/" title="codienroi.com - Cập nhật lịch cúp điện toàn quốc nhanh nhất">
+            <img src="/img/logo-codienroi-header.png">
         </a>
     </div>
 </div>
@@ -139,9 +139,9 @@
                     <h3>3. Tra cứu lịch mất điện trên ứng dụng Zalo</h3>
                     <p>Để tìm lịch ngừng giảm cung cấp điện  trên Zalo. Bạn cần đăng nhập tài khoản Zalo. Nhấn tìm Điện lực miền Nam, hoặc Điện lực miền Trung, hoặc Điện lực miền Bắc, nhấn Quan tâm.</p>
                     <p>Ở khung chat, các bạn nhấn chữ tra cứu, sau đó chọn Lịch cúp điện là có thể xem lịch cắt điện tại khu vực mình đang ở.</p>
-                    <h3>4. Thông báo lịch cúp điện  trên website LichCupDien.org</h3>
+                    <h3>4. Thông báo lịch cúp điện  trên website codienroi.com</h3>
                     <p>Với cách này, các thao tác thực hiện là đơn giản nhất.</p>
-                    <p>Mọi người chỉ cần truy cập trang web LichCupDien.org rồi chọn khu vực bạn sinh sống. Sau đó là bạn có thể xem ngay lịch cúp điện  một cách vô cùng đơn giản.</p>
+                    <p>Mọi người chỉ cần truy cập trang web codienroi.com rồi chọn khu vực bạn sinh sống. Sau đó là bạn có thể xem ngay lịch cúp điện  một cách vô cùng đơn giản.</p>
                     <p>Với những thông tin trên đây, mong quý khán giả đã có thể tìm được cách đơn giản và nhanh chóng để tra cứu lịch cúp điện hôm nay.</p>
                     <p>Mọi ý kiến đóng góp, xin vui lòng liên hệ với chúng tôi để được giải đạp nhanh nhất. Xin chân thành cảm ơn.</p>
                 </div>
@@ -211,7 +211,7 @@
         <p><a class="textnonedecor" href="/gioi-thieu">Giới thiệu</a></p>
         <p><a class="textnonedecor" href="/dieu-khoan-dich-vu">Điều khoản dịch vụ</a></p>
         <p>Cập nhật lịch cúp điện nhanh chóng và chính xác mỗi ngày.</p>
-        <p>info@lichcupdien.org</p>
+        <p>info@codienroi.com</p>
     </div>
 </footer>
 <script type="text/javascript">

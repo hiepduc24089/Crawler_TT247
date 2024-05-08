@@ -2,20 +2,20 @@
 <html>
 <!-- Head -->
 <head>
-    <title>Lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} hôm nay ngày mai và tuần ngày - LichCupDien.org </title>
+    <title>Lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} hôm nay ngày mai và tuần ngày - codienroi.com </title>
     <meta charset="UTF-8">
     <meta name="description" content="Lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} mới nhất hôm nay ngày mai và tuần này. Cập nhật lịch cắt điện nhanh nhất tại {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}}">
     <meta name="keywords" content="lich cup dien, lich cup dien thanh pho long xuyen an giang, lich cup dien hom nay, lich cup dien moi nhat, lich cup dien ngay mai">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/lichcupdien-favicon.png">
+    <link rel="icon" type="image/x-icon" href="/codienroi-favicon.png">
     <meta property="og:type" content= "website" />
     <meta property="og:site_name" content="Lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}}" />
-    <meta property="og:url" content="https://lichcupdien.org/{{$provinceDistricts->slug_district}}" />
-    <meta property="og:image" content="https://lichcupdien.org/img/lich-cup-dien-icon-352x352.png" />
+    <meta property="og:url" content="https://codienroi.com/{{$provinceDistricts->slug_district}}" />
+    <meta property="og:image" content="https://codienroi.com/img/co-dien-roi-icon-352x352.png" />
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="{{ asset('w3-style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="canonical" href="https://lichcupdien.org/{{$provinceDistricts->slug_district}}" />
+    <link rel="canonical" href="https://codienroi.com/{{$provinceDistricts->slug_district}}" />
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('fa/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('fa/apple-icon-60x60.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('fa/apple-icon-72x72.png') }}">
@@ -53,8 +53,8 @@
 <body class="w3-light-grey">
 <div class="lcd-navbar">
     <div class="lcd-navbar-container">
-        <a class="logo" href="/" title="LichCupDien.org - Cập nhật lịch cúp điện toàn quốc nhanh nhất">
-            <img src="/img/logo-lichcupdien-header.png">
+        <a class="logo" href="/" title="codienroi.com - Cập nhật lịch cúp điện toàn quốc nhanh nhất">
+            <img src="/img/logo-codienroi-header.png">
         </a>
     </div>
 
@@ -102,7 +102,7 @@
                         <p>Việc xảy ra tình trạng mất điện tại {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} có thể có rất nhiều nguyên nhân. Các yếu tố có thể gây mất điện như: thiên tai, lũ lụt, bão, hoặc do đơn vị quản lý thực hiện thi công sửa chữa bảo trì đường dây lưới điện</p>
                         <p>Dù cúp điện do bất kỳ nguyên nhân gì thì cũng sẽ gây ảnh hưởng rất lớn đến cuộc sống sinh hoạt và sản xuất của người dân thuộc khu vực mà Điện lực {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} quản lý.</p>
                         <p>Mất điện hay cúp điện được hiểu là điện áp đột ngột hạ xuống còn 0V. Khi đó, sinh hoạt bình thường của người dân bị ảnh hưởng. Khi nắng nóng, không thể sử dụng các thiết bị điện như quạt điện, hay điều hòa,... Nông dân không thể sử dụng máy bơm nước điện để tưới cây. Nhà máy, xí nghiệp không thể sản xuất như bình thường. Nên mọi người cần nắm rõ lịch cắt điện tại {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} để chủ động được sản xuất và sinh hoạt hàng ngày.</p>
-                        <p>Để mọi người thuận tiện tra cứu lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} và các khu vực, tỉnh thành xung quanh, trang web lichcupdien.org ra đời với mong muốn giúp mọi người có nơi tra cứu một cách nhanh chóng và chính xác lịch cắt điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}}. Khi nắm rõ được thông tin lịch mất điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} sẽ giúp quý khán giả có tâm lý thoải mái, không bị bất ngờ khi sự cố cắt điện diễn ra.</p>
+                        <p>Để mọi người thuận tiện tra cứu lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} và các khu vực, tỉnh thành xung quanh, trang web codienroi.com ra đời với mong muốn giúp mọi người có nơi tra cứu một cách nhanh chóng và chính xác lịch cắt điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}}. Khi nắm rõ được thông tin lịch mất điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} sẽ giúp quý khán giả có tâm lý thoải mái, không bị bất ngờ khi sự cố cắt điện diễn ra.</p>
                         <div>
                             <div>
                                 <span style="font-size: 17px; font-weight: 500;">Xem thêm:</span>
@@ -173,9 +173,9 @@
                     <h3>3. Tra cứu lịch mất điện trên ứng dụng Zalo</h3>
                     <p>Để tìm lịch ngừng giảm cung cấp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} trên Zalo. Bạn cần đăng nhập tài khoản Zalo. Nhấn tìm Điện lực miền Nam, hoặc Điện lực miền Trung, hoặc Điện lực miền Bắc, nhấn Quan tâm.</p>
                     <p>Ở khung chat, các bạn nhấn chữ tra cứu, sau đó chọn Lịch cúp điện là có thể xem lịch cắt điện tại khu vực mình đang ở.</p>
-                    <h3>4. Thông báo lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} trên website LichCupDien.org</h3>
+                    <h3>4. Thông báo lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} trên website codienroi.com</h3>
                     <p>Với cách này, các thao tác thực hiện là đơn giản nhất.</p>
-                    <p>Mọi người chỉ cần truy cập trang web LichCupDien.org rồi chọn khu vực bạn sinh sống. Sau đó là bạn có thể xem ngay lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} một cách vô cùng đơn giản.</p>
+                    <p>Mọi người chỉ cần truy cập trang web codienroi.com rồi chọn khu vực bạn sinh sống. Sau đó là bạn có thể xem ngay lịch cúp điện {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}} một cách vô cùng đơn giản.</p>
                     <p>Với những thông tin trên đây, mong quý khán giả đã có thể tìm được cách đơn giản và nhanh chóng để tra cứu lịch cúp điện hôm nay.</p>
                     <p>Mọi ý kiến đóng góp, xin vui lòng liên hệ với chúng tôi để được giải đạp nhanh nhất. Xin chân thành cảm ơn.</p>
                     <h2 style="font-weight:bold">Tổng đài chăm sóc khách hàng Điện lực {{$provinceDistricts->district_name}} - {{$provinceDistricts->province->name}}</h2>
@@ -308,7 +308,7 @@
 
         <div class="ft_items_wrapper">
             <span class="ft_items">© 2024 <a class="textnonedecor" href="/">Lịch cúp điện</a></span>
-            <span class="ft_items">info@lichcupdien.org</span>
+            <span class="ft_items">info@codienroi.com</span>
         </div>
 
         <div class="ft_items_wrapper">
